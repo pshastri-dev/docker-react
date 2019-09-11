@@ -1,0 +1,10 @@
+sudo: required #permission
+services:   #travis-ci will automatically install docker into or running container
+  - docker
+#series of steps before start testing/deploy i.e build docker image
+before_install:
+  #using trvis we cannot get id of container so use image tag for refering it
+  - docker build -t pshastri -f Dockerfile.dev .
+  
+  
+
